@@ -56,6 +56,7 @@ EOF
 
 endfunction
 
+command! -nargs=0 ErlCT          call LoadTemplate("common_test")
 command! -nargs=0 ErlServer      call LoadTemplate("gen_server")
 command! -nargs=0 ErlFsm         call LoadTemplate("gen_fsm")
 command! -nargs=0 ErlSupervisor  call LoadTemplate("supervisor")
