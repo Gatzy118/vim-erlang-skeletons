@@ -1,0 +1,54 @@
+%%%-------------------------------------------------------------------
+%%% @author $author
+%%% @copyright (C) $year, $company
+%%% @doc
+%%%
+%%% @end
+%%% Created : $fulldate
+%%%-------------------------------------------------------------------
+-module($basename).
+
+-compile(export_all).
+
+-include_lib("common_test/include/ct.hrl").
+-include_lib("eunit/include/eunit.hrl").
+
+all() -> [
+          {group, test_group}
+         ].
+
+groups() -> [
+             {test_group, [parallel],
+              [
+               test_a
+              ]}
+            ].
+
+%%%-------------------------------------------------------------------
+%%% Common Test Callback Functions
+%%%-------------------------------------------------------------------
+
+init_per_suite(Config) ->
+    Config.
+
+end_per_suite(_Config) ->
+    ok.
+
+init_per_group(_Group, Config) ->
+    Config.
+
+end_per_group(_Group, _Config) ->
+    ok.
+
+init_per_testcase(_Test, Config) ->
+    Config.
+
+end_per_testcase(_Test, _Config) ->
+    ok.
+
+%%%-------------------------------------------------------------------
+%%% Test Group
+%%%-------------------------------------------------------------------
+
+test_a(_Config) ->
+    ?assert(true).
